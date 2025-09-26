@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trafic light</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0;
+
+    }
+
+
+    .lightbox { 
+
+      /* width: fit-content; */
+
+      /*border: 3px solid red;*/
+
+    }
+    
+
+    .redoff {
+      height: 4rem;
+      width: 4rem;
+
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+
+    }
+
+    .redon {
+      height: 4rem;
+      width: 4rem;
+      background: rgb(255, 0, 0);
+      border-radius: 50%;
+      -webkit-box-shadow: -1px 1px 5px 9px rgba(255, 0, 0, 0.75);
+      -moz-box-shadow: -1px 1px 5px 9px rgba(255, 0, 0, 0.75);
+      box-shadow: -1px 1px 5px 9px rgba(255, 0, 0, 0.75);
+    }
+
+    .yellowoff {
+      height: 4rem;
+      width: 4rem;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+
+    }
+
+    .yellowon {
+      height: 4rem;
+      width: 4rem;
+      background: yellow;
+      border-radius: 50%;
+      -webkit-box-shadow: -1px 1px 5px 9px rgba(255, 251, 0, 0.75);
+      -moz-box-shadow: -1px 1px 5px 9px rgba(255, 251, 0, 0.75);
+      box-shadow: -1px 1px 5px 9px rgba(255, 255, 0, 0.75);
+    }
+
+    .greenoff {
+      height: 4rem;
+      width: 4rem;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+
+
+    }
+
+    .greenon {
+      height: 4rem;
+      width: 4rem;
+      background: rgb(20, 216, 30);
+      border-radius: 50%;
+      box-shadow: -1px 1px 5px 9px rgb(0, 206, 10);
+      box-shadow: -1px 1px 5px 9px rgb(81, 255, 96);
+      box-shadow: -1px 1px 5px 9px rgb(81, 255, 96);
+
+
+    }
+
+    .lightbox2 {
+      background: rgb(255, 255, 255);
+      display: flex;
+      justify-content: space-between;
+      /* border: 2px solid red; */
+
+
+
+    }
+
+    .lights1 {
+      background-color: rgb(0, 0, 0);
+      padding: 10px;
+      display: flex;
+      width: 400px;
+      justify-content: space-between;
+      border-radius: 50px;
+
+    }
+
+    .lights2 {
+      background-color: rgb(0, 0, 0);
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 50px;
+    }
+
+    .lights4 {
+      background-color: rgb(0, 0, 0);
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 50px;
+    }
+
+    .lightboxen {
+    
+      width: auto;
+       display: flex;
+      justify-content: center;
+      /* border: 3px solid blue; */
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="lightboxen">
+
+
+    <section class="lightbox">
+
+
+      <div class="lights1">
+        <div id="red1" class="redoff"></div>
+        <div id="yellow1" class="yellowoff"></div>
+        <div id="green1" class="greenoff
+            "></div>
+      </div>
+
+
+
+      <section class="lightbox2">
+
+        <div class="lights2">
+          <div id="green4" class="greenoff"></div>
+          <div id="yellow4" class="yellowoff"></div>
+          <div id="red4" class="redoff"></div>
+
+
+        </div>
+
+        <div class="lights4">
+          <div id="red2" class="redoff"></div>
+          <div id="yellow2" class="yellowoff"></div>
+          <div id="green2" class="greenoff"></div>
+
+
+        </div>
+
+
+
+
+
+      </section>
+
+
+
+      <div class="lights1">
+        <div id="green3" class="greenoff"></div>
+        <div id="yellow3" class="yellowoff"></div>
+        <div id="red3" class="redoff"></div>
+      </div>
+
+
+
+
+    </section>
+
+
+  </section>
+
+
+
+
+  <script> function startTrafficSignal() {
+
+      var red1 = document.getElementById("red1");
+      var green1 = document.getElementById("green1");
+      var yellow1 = document.getElementById("yellow1");
+
+      var red2 = document.getElementById("red2");
+      var green2 = document.getElementById("green2");
+      var yellow2 = document.getElementById("yellow2");
+
+      var red4 = document.getElementById("red4");
+      var green4 = document.getElementById("green4");
+      var yellow4 = document.getElementById("yellow4");
+
+      var red3 = document.getElementById("red3");
+      var green3 = document.getElementById("green3");
+      var yellow3 = document.getElementById("yellow3");
+      setTimeout(() => {
+
+        //off lights
+        green4.className = "greenoff";
+        red1.className = "redoff";
+
+
+        //on lights
+        yellow1.className = "yellowon";
+        yellow4.className = "yellowon";
+
+        red2.className = "redon";
+        red3.className = "redon";
+
+      }, 1000)
+      setTimeout(() => {
+        //off lights
+        yellow1.className = "yellowoff";
+        yellow4.className = "yellowoff";
+
+        //on lights
+        green1.className = "greenon";
+        red4.className = "redon";
+      }, 2000)
+
+      setTimeout(() => {
+        //off lights
+        green1.className = "greenoff";
+        red2.className = "redoff";
+
+        //on lights
+        yellow1.className = "yellowon";
+        yellow2.className = "yellowon";
+
+      }, 6000)
+
+      setTimeout(() => {
+        //off lights
+        yellow1.className = "yellowoff";
+        yellow2.className = "yellowoff";
+
+        //on lights
+        green2.className = "greenon";
+        red1.className = "redon";
+      }, 7000)
+      setTimeout(() => {
+        //off lights
+        green2.className = "greenoff";
+        red3.className = "redoff";
+
+        //on lights
+        yellow2.className = "yellowon";
+        yellow3.className = "yellowon";
+      }, 11000)
+
+      setTimeout(() => {
+        //offlights
+        yellow2.className = "yellowoff";
+        yellow3.className = "yellowoff";
+
+        //on lights
+        green3.className = "greenon";
+        red2.className = "redon";
+      }, 12000)
+
+      setTimeout(() => {
+        //off lights
+        green3.className = "greenoff";
+        red4.className = "redoff";
+
+        //on lights
+        yellow3.className = "yellowon";
+        yellow4.className = "yellowon";
+
+      }, 16000)
+
+      setTimeout(() => {
+        //off lights
+        yellow3.className = "yellowoff";
+        yellow4.className = "yellowoff";
+
+        //on lights
+        green4.className = "greenon";
+        red3.className = "redon";
+
+
+      }, 17000)
+
+      setTimeout(() => {
+       
+      }, 20000)
+
+    };
+
+
+    var timer = setInterval(function () {
+      startTrafficSignal();
+
+    }, 20000);
+
+    startTrafficSignal();
+  </script>
+
+</body>
+
+</html>
